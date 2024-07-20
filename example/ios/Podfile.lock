@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_device_unique_id (1.0.0):
+  - flutter_device_unique_id (1.0.3):
     - Flutter
     - KeychainAccess
   - integration_test (0.0.1):
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
-  flutter_device_unique_id: b185dbe01c219cb1bf51d9d468f0f6a50aba1720
+  flutter_device_unique_id: 5141b57a22d4840627d5761aa548f7dd4d3472fe
   integration_test: ce0a3ffa1de96d1a89ca0ac26fca7ea18a749ef4
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
 
