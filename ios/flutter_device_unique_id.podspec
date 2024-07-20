@@ -4,13 +4,13 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_device_unique_id'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'plugin for getting the Unique ID.'
   s.description      = <<-DESC
 the flutter plugin for getting the Unique ID.
 DESC
   s.homepage         = 'https://github.com/Share-Invest'
-  s.license          = { :type => 'MIT', :file => 'ios/LICENSE' }
+  s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ShareInvest Corp.' => 'prophet0915@gmail.com' }
   s.source           = { :git => 'https://github.com/Share-Invest/flutter-device-unique-id.git', :tag => s.version.to_s }
   s.source_files = 'ios/Classes/**/*'
