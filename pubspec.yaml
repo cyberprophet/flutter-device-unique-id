@@ -1,0 +1,32 @@
+name: flutter_device_unique_id
+description: "plugin for getting the Unique ID."
+version: 1.0.0
+
+repository: https://github.com/Share-Invest/flutter-device-unique-id
+
+homepage: https://github.com/Share-Invest
+
+maintainer: ShareInvest Corp.
+
+environment:
+  sdk: ">=3.4.3 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.shareinvest.flutter_device_unique_id
+        pluginClass: FlutterDeviceUniqueIdPlugin
+      ios:
+        pluginClass: FlutterDeviceUniqueIdPlugin
