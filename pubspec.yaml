@@ -33,3 +33,10 @@ flutter:
         pluginClass: FlutterDeviceUniqueIdPlugin
       ios:
         pluginClass: FlutterDeviceUniqueIdPlugin
+      macos:
+        pluginClass: FlutterDeviceUniqueIdPlugin
+      windows:
+        pluginClass: FlutterDeviceUniqueIdPlugin
+      web:
+        pluginClass: FlutterDeviceUniqueIdWeb
+        fileName: flutter_device_unique_id_web.dart
