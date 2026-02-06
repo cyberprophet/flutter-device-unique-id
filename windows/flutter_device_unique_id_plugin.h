@@ -24,6 +24,13 @@ class FlutterDeviceUniqueIdPlugin : public flutter::Plugin {
   void HandleMethodCall(
       const flutter::MethodCall<flutter::EncodableValue> &method_call,
       std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result);
+
+ private:
+  // Helper methods for registry operations
+  std::string GetOrCreateUniqueId();
+  std::string GetUniqueIdFromRegistry();
+  bool SetUniqueIdInRegistry(const std::string& unique_id);
+  std::string GenerateUUID();
 };
 
 }  // namespace flutter_device_unique_id

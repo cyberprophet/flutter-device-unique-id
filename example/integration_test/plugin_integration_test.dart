@@ -22,4 +22,27 @@ void main() {
     // just assert that some non-empty string is returned.
     expect(version?.isNotEmpty, true);
   });
+
+  testWidgets('getUniqueId returns non-empty string', (WidgetTester tester) async {
+    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final String? uniqueId = await plugin.getUniqueId();
+    expect(uniqueId, isNotNull);
+    expect(uniqueId?.isNotEmpty, true);
+  });
+
+  testWidgets('getUniqueId is idempotent', (WidgetTester tester) async {
+    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final String? firstCall = await plugin.getUniqueId();
+    final String? secondCall = await plugin.getUniqueId();
+    expect(firstCall, equals(secondCall));
+  });
+
+  testWidgets('getUniqueId returns same value across multiple calls', (WidgetTester tester) async {
+    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final String? id1 = await plugin.getUniqueId();
+    final String? id2 = await plugin.getUniqueId();
+    final String? id3 = await plugin.getUniqueId();
+    expect(id1, equals(id2));
+    expect(id2, equals(id3));
+  });
 }
