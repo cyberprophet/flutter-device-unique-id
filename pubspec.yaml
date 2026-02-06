@@ -1,6 +1,6 @@
 name: flutter_device_unique_id
 description: "plugin for getting the Unique ID."
-version: 1.0.3
+version: 2.0.0
 
 repository: https://github.com/Share-Invest/flutter-device-unique-id
 
@@ -9,13 +9,16 @@ homepage: https://github.com/Share-Invest
 maintainer: ShareInvest Corp.
 
 environment:
-  sdk: ">=3.4.3 <4.0.0"
-  flutter: ">=3.3.0"
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   plugin_platform_interface: ^2.0.2
+  web: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +33,10 @@ flutter:
         pluginClass: FlutterDeviceUniqueIdPlugin
       ios:
         pluginClass: FlutterDeviceUniqueIdPlugin
+      macos:
+        pluginClass: FlutterDeviceUniqueIdPlugin
+      windows:
+        pluginClass: FlutterDeviceUniqueIdPlugin
+      web:
+        pluginClass: FlutterDeviceUniqueIdWeb
+        fileName: flutter_device_unique_id_web.dart

@@ -13,7 +13,14 @@ void main() {
         .setMockMethodCallHandler(
       channel,
       (MethodCall methodCall) async {
-        return '42';
+        switch (methodCall.method) {
+          case 'getPlatformVersion':
+            return '42';
+          case 'getUniqueId':
+            return 'device_unique_id';
+          default:
+            return null;
+        }
       },
     );
   });
@@ -25,5 +32,10 @@ void main() {
 
   test('getPlatformVersion', () async {
     expect(await platform.getPlatformVersion(), '42');
+  });
+
+  test('getUniqueId invokes method channel with correct method name',
+      () async {
+    expect(await platform.getUniqueId(), 'device_unique_id');
   });
 }
