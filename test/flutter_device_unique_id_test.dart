@@ -28,4 +28,14 @@ void main() {
 
     expect(await flutterDeviceUniqueIdPlugin.getPlatformVersion(), '42');
   });
+
+  test('getUniqueId delegates to FlutterDevicePlatform.instance.getUniqueId()',
+      () async {
+    FlutterDeviceUniqueId flutterDeviceUniqueIdPlugin = FlutterDeviceUniqueId();
+    MockFlutterDevicePlatform fakePlatform = MockFlutterDevicePlatform();
+    FlutterDevicePlatform.instance = fakePlatform;
+
+    expect(await flutterDeviceUniqueIdPlugin.getUniqueId(),
+        'device_unique_id');
+  });
 }
