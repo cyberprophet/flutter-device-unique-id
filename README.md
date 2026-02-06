@@ -97,3 +97,12 @@ See [LICENSE](LICENSE) file.
 ## Maintainer
 
 ShareInvest Corp.
+
+## Release (Maintainers)
+
+This repository includes a tag-driven GitHub Actions workflow at `.github/workflows/publish.yml`.
+
+1. Update `version` in `pubspec.yaml` and add release notes in `CHANGELOG.md`.
+2. Ensure pub.dev automated publishing is enabled for this GitHub repository with tag pattern `v{{version}}`.
+3. Create and push a release tag that matches `pubspec.yaml` version, for example `v2.0.0`.
+4. The workflow runs analyze/test/dry-run and then publishes to pub.dev using OIDC.
