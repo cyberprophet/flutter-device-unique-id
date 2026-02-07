@@ -6,9 +6,9 @@
 
 #include "generated_plugin_registrant.h"
 
-#include <flutter_device_unique_id/flutter_device_unique_id_plugin.h>
+#include <flutter_device_platform_id/flutter_device_platform_id_plugin.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
-  FlutterDeviceUniqueIdPluginRegisterWithRegistrar(
-      registry->GetRegistrarForPlugin("FlutterDeviceUniqueIdPlugin"));
+  FlutterDevicePlatformIdPluginRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterDevicePlatformIdPlugin"));
 }

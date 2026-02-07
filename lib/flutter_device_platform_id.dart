@@ -1,6 +1,6 @@
-import 'flutter_device_unique_id_platform_interface.dart';
+import 'flutter_device_platform_id_platform_interface.dart';
 
-class FlutterDeviceUniqueId {
+class FlutterDevicePlatformId {
   Future<String?> getPlatformVersion() {
     return FlutterDevicePlatform.instance.getPlatformVersion();
   }

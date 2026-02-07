@@ -1,6 +1,6 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'flutter_device_unique_id_method_channel.dart';
+import 'flutter_device_platform_id_method_channel.dart';
 
 abstract class FlutterDevicePlatform extends PlatformInterface {
   FlutterDevicePlatform() : super(token: _token);

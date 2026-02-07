@@ -8,9 +8,9 @@
 #include <string>
 #include <variant>
 
-#include "flutter_device_unique_id_plugin.h"
+#include "flutter_device_platform_id_plugin.h"
 
-namespace flutter_device_unique_id {
+namespace flutter_device_platform_id {
 namespace test {
 
 namespace {
@@ -22,8 +22,8 @@ using flutter::MethodResultFunctions;
 
 }  // namespace
 
-TEST(FlutterDeviceUniqueIdPlugin, GetPlatformVersion) {
-  FlutterDeviceUniqueIdPlugin plugin;
+TEST(FlutterDevicePlatformIdPlugin, GetPlatformVersion) {
+  FlutterDevicePlatformIdPlugin plugin;
   // Save the reply value from the success callback.
   std::string result_string;
   plugin.HandleMethodCall(
@@ -40,4 +40,4 @@ TEST(FlutterDeviceUniqueIdPlugin, GetPlatformVersion) {
 }
 
 }  // namespace test
-}  // namespace flutter_device_unique_id
+}  // namespace flutter_device_platform_id

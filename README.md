@@ -1,4 +1,4 @@
-# Flutter Device Unique ID
+# Flutter Device Platform ID
 
 A Flutter plugin for getting a unique device identifier across multiple platforms.
 
@@ -18,19 +18,19 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_device_unique_id: ^1.0.0
+  flutter_device_platform_id: ^1.0.0
 ```
 
 ## Usage
 
 ```dart
-import 'package:flutter_device_unique_id/flutter_device_unique_id.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id.dart';
 
 // Get the unique device ID
-String? uniqueId = await FlutterDeviceUniqueId().getUniqueId();
+String? uniqueId = await FlutterDevicePlatformId().getUniqueId();
 
 // Get the platform version
-String? platformVersion = await FlutterDeviceUniqueId().getPlatformVersion();
+String? platformVersion = await FlutterDevicePlatformId().getPlatformVersion();
 ```
 
 ## Platform-Specific Details
@@ -59,14 +59,14 @@ String? platformVersion = await FlutterDeviceUniqueId().getPlatformVersion();
 ### Windows
 - **Source**: UUID stored in Windows Registry
 - **Format**: UUID (8-4-4-4-12)
-- **Storage**: `HKEY_CURRENT_USER\Software\com.shareinvest\flutter_device_unique_id` value `uniqueDeviceId`
+- **Storage**: `HKEY_CURRENT_USER\Software\com.shareinvest\flutter_device_platform_id` value `uniqueDeviceId`
 - **Persistence**: Per-user, survives app reinstalls
 - **Reset**: Registry cleared or user profile reset
 
 ### Web
 - **Source**: UUID stored in browser localStorage
 - **Format**: UUID (8-4-4-4-12)
-- **Storage**: localStorage key `flutter_device_unique_id.uniqueDeviceId`
+- **Storage**: localStorage key `flutter_device_platform_id.uniqueDeviceId`
 - **Fallback**: sessionStorage → in-memory (for private browsing)
 - **Persistence**: Browser-profile scoped
 - **Reset**: Site data cleared, incognito/private mode

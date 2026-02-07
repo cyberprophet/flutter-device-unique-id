@@ -1,24 +1,24 @@
-#ifndef FLUTTER_PLUGIN_FLUTTER_DEVICE_UNIQUE_ID_PLUGIN_H_
-#define FLUTTER_PLUGIN_FLUTTER_DEVICE_UNIQUE_ID_PLUGIN_H_
+#ifndef FLUTTER_PLUGIN_FLUTTER_DEVICE_PLATFORM_ID_PLUGIN_H_
+#define FLUTTER_PLUGIN_FLUTTER_DEVICE_PLATFORM_ID_PLUGIN_H_
 
 #include <flutter/method_channel.h>
 #include <flutter/plugin_registrar_windows.h>
 
 #include <memory>
 
-namespace flutter_device_unique_id {
+namespace flutter_device_platform_id {
 
-class FlutterDeviceUniqueIdPlugin : public flutter::Plugin {
+class FlutterDevicePlatformIdPlugin : public flutter::Plugin {
  public:
   static void RegisterWithRegistrar(flutter::PluginRegistrarWindows *registrar);
 
-  FlutterDeviceUniqueIdPlugin();
+  FlutterDevicePlatformIdPlugin();
 
-  virtual ~FlutterDeviceUniqueIdPlugin();
+  virtual ~FlutterDevicePlatformIdPlugin();
 
   // Disallow copy and assign.
-  FlutterDeviceUniqueIdPlugin(const FlutterDeviceUniqueIdPlugin&) = delete;
-  FlutterDeviceUniqueIdPlugin& operator=(const FlutterDeviceUniqueIdPlugin&) = delete;
+  FlutterDevicePlatformIdPlugin(const FlutterDevicePlatformIdPlugin&) = delete;
+  FlutterDevicePlatformIdPlugin& operator=(const FlutterDevicePlatformIdPlugin&) = delete;
 
   // Called when a method is called on this plugin's channel from Dart.
   void HandleMethodCall(
@@ -33,6 +33,6 @@ class FlutterDeviceUniqueIdPlugin : public flutter::Plugin {
   std::string GenerateUUID();
 };
 
-}  // namespace flutter_device_unique_id
+}  // namespace flutter_device_platform_id
 
-#endif  // FLUTTER_PLUGIN_FLUTTER_DEVICE_UNIQUE_ID_PLUGIN_H_
+#endif  // FLUTTER_PLUGIN_FLUTTER_DEVICE_PLATFORM_ID_PLUGIN_H_
