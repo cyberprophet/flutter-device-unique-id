@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_device_unique_id/flutter_device_unique_id_platform_interface.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id_platform_interface.dart';
 
 void main() {
   runApp(const MyApp());

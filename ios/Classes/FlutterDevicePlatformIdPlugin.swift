@@ -2,10 +2,10 @@ import Flutter
 import UIKit
 import KeychainAccess
 
-public class FlutterDeviceUniqueIdPlugin: NSObject, FlutterPlugin {
+public class FlutterDevicePlatformIdPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_device_unique_id", binaryMessenger: registrar.messenger())
-    let instance = FlutterDeviceUniqueIdPlugin()
+    let channel = FlutterMethodChannel(name: "flutter_device_platform_id", binaryMessenger: registrar.messenger())
+    let instance = FlutterDevicePlatformIdPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

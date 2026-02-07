@@ -1,4 +1,4 @@
-#include "flutter_device_unique_id_plugin.h"
+#include "flutter_device_platform_id_plugin.h"
 
 // This must be included before many other Windows headers.
 #include <windows.h>
@@ -15,17 +15,17 @@
 #include <objbase.h>
 #include <string>
 
-namespace flutter_device_unique_id {
+namespace flutter_device_platform_id {
 
 // static
-void FlutterDeviceUniqueIdPlugin::RegisterWithRegistrar(
+void FlutterDevicePlatformIdPlugin::RegisterWithRegistrar(
     flutter::PluginRegistrarWindows *registrar) {
   auto channel =
       std::make_unique<flutter::MethodChannel<flutter::EncodableValue>>(
-          registrar->messenger(), "flutter_device_unique_id",
+          registrar->messenger(), "flutter_device_platform_id",
           &flutter::StandardMethodCodec::GetInstance());
 
-  auto plugin = std::make_unique<FlutterDeviceUniqueIdPlugin>();
+  auto plugin = std::make_unique<FlutterDevicePlatformIdPlugin>();
 
   channel->SetMethodCallHandler(
       [plugin_pointer = plugin.get()](const auto &call, auto result) {
@@ -35,11 +35,11 @@ void FlutterDeviceUniqueIdPlugin::RegisterWithRegistrar(
   registrar->AddPlugin(std::move(plugin));
 }
 
-FlutterDeviceUniqueIdPlugin::FlutterDeviceUniqueIdPlugin() {}
+FlutterDevicePlatformIdPlugin::FlutterDevicePlatformIdPlugin() {}
 
-FlutterDeviceUniqueIdPlugin::~FlutterDeviceUniqueIdPlugin() {}
+FlutterDevicePlatformIdPlugin::~FlutterDevicePlatformIdPlugin() {}
 
-void FlutterDeviceUniqueIdPlugin::HandleMethodCall(
+void FlutterDevicePlatformIdPlugin::HandleMethodCall(
     const flutter::MethodCall<flutter::EncodableValue> &method_call,
     std::unique_ptr<flutter::MethodResult<flutter::EncodableValue>> result) {
   if (method_call.method_name().compare("getPlatformVersion") == 0) {
@@ -65,7 +65,7 @@ void FlutterDeviceUniqueIdPlugin::HandleMethodCall(
   }
 }
 
-std::string FlutterDeviceUniqueIdPlugin::GenerateUUID() {
+std::string FlutterDevicePlatformIdPlugin::GenerateUUID() {
   GUID guid;
   if (CoCreateGuid(&guid) != S_OK) {
     return "";
@@ -81,9 +81,9 @@ std::string FlutterDeviceUniqueIdPlugin::GenerateUUID() {
   return std::string(uuid_str);
 }
 
-std::string FlutterDeviceUniqueIdPlugin::GetUniqueIdFromRegistry() {
+std::string FlutterDevicePlatformIdPlugin::GetUniqueIdFromRegistry() {
   HKEY hkey = nullptr;
-  const wchar_t* subkey = L"Software\\com.shareinvest\\flutter_device_unique_id";
+  const wchar_t* subkey = L"Software\\com.shareinvest\\flutter_device_platform_id";
   const wchar_t* value_name = L"uniqueDeviceId";
 
   if (RegOpenKeyExW(HKEY_CURRENT_USER, subkey, 0, KEY_READ, &hkey) != ERROR_SUCCESS) {
@@ -109,9 +109,9 @@ std::string FlutterDeviceUniqueIdPlugin::GetUniqueIdFromRegistry() {
   return str;
 }
 
-bool FlutterDeviceUniqueIdPlugin::SetUniqueIdInRegistry(const std::string& unique_id) {
+bool FlutterDevicePlatformIdPlugin::SetUniqueIdInRegistry(const std::string& unique_id) {
   HKEY hkey = nullptr;
-  const wchar_t* subkey = L"Software\\com.shareinvest\\flutter_device_unique_id";
+  const wchar_t* subkey = L"Software\\com.shareinvest\\flutter_device_platform_id";
   const wchar_t* value_name = L"uniqueDeviceId";
 
   DWORD disposition = 0;
@@ -132,7 +132,7 @@ bool FlutterDeviceUniqueIdPlugin::SetUniqueIdInRegistry(const std::string& uniqu
   return result == ERROR_SUCCESS;
 }
 
-std::string FlutterDeviceUniqueIdPlugin::GetOrCreateUniqueId() {
+std::string FlutterDevicePlatformIdPlugin::GetOrCreateUniqueId() {
   std::string unique_id = GetUniqueIdFromRegistry();
   if (!unique_id.empty()) {
     return unique_id;
@@ -150,4 +150,4 @@ std::string FlutterDeviceUniqueIdPlugin::GetOrCreateUniqueId() {
   return unique_id;
 }
 
-}  // namespace flutter_device_unique_id
+}  // namespace flutter_device_platform_id

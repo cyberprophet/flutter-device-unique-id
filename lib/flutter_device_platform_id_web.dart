@@ -6,21 +6,21 @@
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:web/web.dart' as web;
 
-import 'flutter_device_unique_id_platform_interface.dart';
+import 'flutter_device_platform_id_platform_interface.dart';
 
 /// Storage key for persisting the unique device ID
-const String _storageKey = 'flutter_device_unique_id.uniqueDeviceId';
+const String _storageKey = 'flutter_device_platform_id.uniqueDeviceId';
 
 /// In-memory fallback storage when browser storage is unavailable
 String? _inMemoryId;
 
-/// A web implementation of the FlutterDevicePlatform of the FlutterDeviceUniqueId plugin.
-class FlutterDeviceUniqueIdWeb extends FlutterDevicePlatform {
-  /// Constructs a FlutterDeviceUniqueIdWeb
-  FlutterDeviceUniqueIdWeb();
+/// A web implementation of the FlutterDevicePlatform of the FlutterDevicePlatformId plugin.
+class FlutterDevicePlatformIdWeb extends FlutterDevicePlatform {
+  /// Constructs a FlutterDevicePlatformIdWeb
+  FlutterDevicePlatformIdWeb();
 
   static void registerWith(Registrar registrar) {
-    FlutterDevicePlatform.instance = FlutterDeviceUniqueIdWeb();
+    FlutterDevicePlatform.instance = FlutterDevicePlatformIdWeb();
   }
 
   /// Returns a [String] containing the version of the platform.

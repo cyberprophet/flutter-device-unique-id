@@ -1,4 +1,4 @@
-package com.shareinvest.flutter_device_unique_id
+package com.shareinvest.flutter_device_platform_id
 
 import androidx.annotation.NonNull
 import android.annotation.SuppressLint
@@ -11,13 +11,13 @@ import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
 
-class FlutterDeviceUniqueIdPlugin : FlutterPlugin, MethodCallHandler {
+class FlutterDevicePlatformIdPlugin : FlutterPlugin, MethodCallHandler {
     private lateinit var channel: MethodChannel
     private lateinit var contentResolver: ContentResolver
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
         contentResolver = flutterPluginBinding.applicationContext.contentResolver
-        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_device_unique_id")
+        channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_device_platform_id")
         channel.setMethodCallHandler(this)
     }
 

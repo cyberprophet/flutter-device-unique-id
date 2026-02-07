@@ -1,4 +1,4 @@
-package com.shareinvest.flutter_device_unique_id_example
+package com.shareinvest.flutter_device_platform_id_example
 
 import io.flutter.embedding.android.FlutterActivity
 

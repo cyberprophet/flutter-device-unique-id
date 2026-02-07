@@ -2,13 +2,13 @@ import Flutter
 import UIKit
 import Security
 
-public class FlutterDeviceUniqueIdPlugin: NSObject, FlutterPlugin {
+public class FlutterDevicePlatformIdPlugin: NSObject, FlutterPlugin {
   private static let keychainService = "com.shareinvest.unique_id"
   private static let keychainAccount = "uniqueDeviceId"
 
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "flutter_device_unique_id", binaryMessenger: registrar.messenger())
-    let instance = FlutterDeviceUniqueIdPlugin()
+    let channel = FlutterMethodChannel(name: "flutter_device_platform_id", binaryMessenger: registrar.messenger())
+    let instance = FlutterDevicePlatformIdPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
 

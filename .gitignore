@@ -30,6 +30,7 @@ build/
 
 # Local tooling artifacts
 .sisyphus/
+nul
 
 # Swift Package Manager build artifacts (plugin macOS/iOS package folders)
 **/.build/

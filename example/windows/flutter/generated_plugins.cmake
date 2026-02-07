@@ -3,7 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
-  flutter_device_unique_id
+  flutter_device_platform_id
 )
 
 list(APPEND FLUTTER_FFI_PLUGIN_LIST

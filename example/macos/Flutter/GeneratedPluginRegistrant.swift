@@ -5,8 +5,8 @@
 import FlutterMacOS
 import Foundation
 
-import flutter_device_unique_id
+import flutter_device_platform_id
 
 func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
-  FlutterDeviceUniqueIdPlugin.register(with: registry.registrar(forPlugin: "FlutterDeviceUniqueIdPlugin"))
+  FlutterDevicePlatformIdPlugin.register(with: registry.registrar(forPlugin: "FlutterDevicePlatformIdPlugin"))
 }

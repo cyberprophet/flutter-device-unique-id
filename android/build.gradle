@@ -1,4 +1,4 @@
-group = "com.shareinvest.flutter_device_unique_id"
+group = "com.shareinvest.flutter_device_platform_id"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -26,7 +26,7 @@ apply plugin: "kotlin-android"
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace = "com.shareinvest.flutter_device_unique_id"
+        namespace = "com.shareinvest.flutter_device_platform_id"
     }
 
     compileSdk = 34

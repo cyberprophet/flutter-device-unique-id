@@ -1,2 +1,2 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.shareinvest.flutter_device_unique_id" />
+          package="com.shareinvest.flutter_device_platform_id" />

@@ -1,6 +1,6 @@
-import 'package:flutter_device_unique_id/flutter_device_unique_id.dart';
-import 'package:flutter_device_unique_id/flutter_device_unique_id_method_channel.dart';
-import 'package:flutter_device_unique_id/flutter_device_unique_id_platform_interface.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id_method_channel.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id_platform_interface.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -22,7 +22,7 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    FlutterDeviceUniqueId flutterDeviceUniqueIdPlugin = FlutterDeviceUniqueId();
+    FlutterDevicePlatformId flutterDeviceUniqueIdPlugin = FlutterDevicePlatformId();
     MockFlutterDevicePlatform fakePlatform = MockFlutterDevicePlatform();
     FlutterDevicePlatform.instance = fakePlatform;
 
@@ -31,7 +31,7 @@ void main() {
 
   test('getUniqueId delegates to FlutterDevicePlatform.instance.getUniqueId()',
       () async {
-    FlutterDeviceUniqueId flutterDeviceUniqueIdPlugin = FlutterDeviceUniqueId();
+    FlutterDevicePlatformId flutterDeviceUniqueIdPlugin = FlutterDevicePlatformId();
     MockFlutterDevicePlatform fakePlatform = MockFlutterDevicePlatform();
     FlutterDevicePlatform.instance = fakePlatform;
 

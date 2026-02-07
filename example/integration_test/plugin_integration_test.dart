@@ -12,7 +12,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 
-import 'package:flutter_device_unique_id/flutter_device_unique_id.dart';
+import 'package:flutter_device_platform_id/flutter_device_platform_id.dart';
 
 // Platform-specific format validators
 bool _isValidAndroidId(String id) {
@@ -31,7 +31,7 @@ void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
   testWidgets('getPlatformVersion test', (WidgetTester tester) async {
-    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
     final String? version = await plugin.getPlatformVersion();
     // The version string depends on the host platform running the test, so
     // just assert that some non-empty string is returned.
@@ -39,21 +39,21 @@ void main() {
   });
 
   testWidgets('getUniqueId returns non-empty string', (WidgetTester tester) async {
-    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
     final String? uniqueId = await plugin.getUniqueId();
     expect(uniqueId, isNotNull);
     expect(uniqueId?.isNotEmpty, true);
   });
 
   testWidgets('getUniqueId is idempotent', (WidgetTester tester) async {
-    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
     final String? firstCall = await plugin.getUniqueId();
     final String? secondCall = await plugin.getUniqueId();
     expect(firstCall, equals(secondCall));
   });
 
   testWidgets('getUniqueId returns same value across multiple calls', (WidgetTester tester) async {
-    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
     final String? id1 = await plugin.getUniqueId();
     final String? id2 = await plugin.getUniqueId();
     final String? id3 = await plugin.getUniqueId();
@@ -62,7 +62,7 @@ void main() {
   });
 
   testWidgets('getUniqueId format validation - platform specific', (WidgetTester tester) async {
-    final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+    final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
     final String? uniqueId = await plugin.getUniqueId();
     
     expect(uniqueId, isNotNull);
@@ -86,7 +86,7 @@ void main() {
   // Web-specific test: localStorage key verification
   if (kIsWeb) {
     testWidgets('Web: localStorage key is created when available', (WidgetTester tester) async {
-      final FlutterDeviceUniqueId plugin = FlutterDeviceUniqueId();
+      final FlutterDevicePlatformId plugin = FlutterDevicePlatformId();
       
       // Call getUniqueId to trigger storage
       final String? uniqueId = await plugin.getUniqueId();
