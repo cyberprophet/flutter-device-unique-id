@@ -1,6 +1,6 @@
 name: flutter_device_platform_id
 description: "Flutter plugin for stable platform-scoped device IDs."
-version: 1.0.0
+version: 1.0.1
 
 repository: https://github.com/cyberprophet/flutter-device-unique-id
 
