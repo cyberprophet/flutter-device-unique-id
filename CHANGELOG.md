@@ -1,4 +1,4 @@
-## 2.0.0 - 2026-02-07
+## 1.0.0 - 2026-02-07
 
 ### Added
 - ✨ **macOS platform support** with Keychain storage
@@ -9,8 +9,8 @@
 - 📚 Detailed platform-specific documentation in README
 
 ### Changed
-- ⚠️ **BREAKING**: Minimum Dart SDK: `>=3.5.0` (was `>=3.4.3`)
-- ⚠️ **BREAKING**: Minimum Flutter SDK: `>=3.24.0` (was `>=3.3.0`)
+- Minimum Dart SDK: `>=3.5.0`
+- Minimum Flutter SDK: `>=3.24.0`
 - 📦 Added `flutter_web_plugins` SDK dependency
 - 📦 Added `web: ^1.0.0` dependency for modern web APIs
 
@@ -19,18 +19,3 @@
 - **Windows**: Uses Windows Registry API (RegOpenKeyEx, RegSetValueEx) with HKCU for per-user storage
 - **Web**: Uses `package:web` for modern Dart web APIs, graceful fallback for private browsing mode
 
-## 1.0.3
-
-modified source files
-
-## 1.0.2
-
-change the path of LICENSE
-
-## 1.0.1
-
-append LICENSE
-
-## 1.0.0
-
-initial release.
