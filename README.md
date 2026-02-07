@@ -18,7 +18,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter_device_platform_id: ^1.0.0
+  flutter_device_platform_id: ^1.0.1
 ```
 
 ## Usage
@@ -104,5 +104,5 @@ This repository includes a tag-driven GitHub Actions workflow at `.github/workfl
 
 1. Update `version` in `pubspec.yaml` and add release notes in `CHANGELOG.md`.
 2. Ensure pub.dev automated publishing is enabled for this GitHub repository with tag pattern `v{{version}}`.
-3. Create and push a release tag that matches `pubspec.yaml` version, for example `v1.0.0`.
+3. Create and push a release tag that matches `pubspec.yaml` version, for example `v1.0.1`.
 4. The workflow runs analyze/test/dry-run and then publishes to pub.dev using OIDC.

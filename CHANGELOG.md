@@ -1,3 +1,14 @@
+## 1.0.1 - 2026-02-07
+
+### Fixed
+- Android debug build compatibility with current Flutter Gradle plugin APIs
+- Removed duplicate legacy Groovy Gradle files in `example/android` to avoid mixed DSL/version conflicts
+
+### Changed
+- Updated Android toolchain alignment for this repo:
+  - Plugin Android build uses AGP `8.11.1`, Kotlin `2.2.20`, Java `17`, compileSdk `36`, minSdk `24`
+  - Example Android Gradle wrapper uses `8.14`
+
 ## 1.0.0 - 2026-02-07
 
 ### Added
