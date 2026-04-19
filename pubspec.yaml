@@ -1,6 +1,6 @@
 name: flutter_device_platform_id
 description: "Flutter plugin for stable platform-scoped device IDs."
-version: 1.0.2
+version: 1.0.3
 
 repository: https://github.com/cyberprophet/flutter-device-unique-id
 
@@ -36,7 +36,7 @@ flutter:
       macos:
         pluginClass: FlutterDevicePlatformIdPlugin
       windows:
-        pluginClass: FlutterDevicePlatformIdPlugin
+        pluginClass: FlutterDevicePlatformIdPluginCApi
       web:
         pluginClass: FlutterDevicePlatformIdWeb
         fileName: flutter_device_platform_id_web.dart

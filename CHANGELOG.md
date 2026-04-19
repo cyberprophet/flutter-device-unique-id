@@ -1,3 +1,8 @@
+## 1.0.3 - 2026-04-19
+
+### Fixed
+- Windows plugin registration: set `windows.pluginClass` to `FlutterDevicePlatformIdPluginCApi` so Flutter's tooling emits the modern C API registrant (`..._plugin_c_api.h` / `...CApiRegisterWithRegistrar`) that matches the exported symbol. Previously, the generated `generated_plugin_registrant.cc` in consumer projects referenced a non-existent header and the example app failed to link.
+
 ## 1.0.2 - 2026-04-19
 
 ### Fixed
