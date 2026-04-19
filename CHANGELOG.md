@@ -1,3 +1,8 @@
+## 1.0.2 - 2026-04-19
+
+### Fixed
+- Windows build failure under Flutter's default `/W4 /WX` settings: cast `size_t` expression to `DWORD` at `RegSetValueExW` `cbData` argument to silence C4267 narrowing warning promoted to error (#6)
+
 ## 1.0.1 - 2026-02-07
 
 ### Fixed

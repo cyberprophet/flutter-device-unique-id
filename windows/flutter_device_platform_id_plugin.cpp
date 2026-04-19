@@ -126,7 +126,7 @@ bool FlutterDevicePlatformIdPlugin::SetUniqueIdInRegistry(const std::string& uni
 
   LONG result = RegSetValueExW(hkey, value_name, 0, REG_SZ,
                                reinterpret_cast<const BYTE*>(wide_id.c_str()),
-                               (wide_id.length() + 1) * sizeof(wchar_t));
+                               static_cast<DWORD>((wide_id.length() + 1) * sizeof(wchar_t)));
   RegCloseKey(hkey);
 
   return result == ERROR_SUCCESS;
